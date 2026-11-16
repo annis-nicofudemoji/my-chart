@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f9dce7">
+<title>心がふっと軽くなる言葉診断｜あにす</title>
+<style>
+:root{--pink:#e9a9c0;--pink2:#f8e3eb;--rose:#c87596;--lav:#e9e4f7;--cream:#fffaf1;--ink:#594b52;--muted:#887982;--green:#e5eee3}
+*{box-sizing:border-box} body{margin:0;background:linear-gradient(145deg,#fff5f7,#f5effb 55%,#fff9ed);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);min-height:100vh}
+main{width:min(100% - 28px,560px);margin:0 auto;padding:22px 0 38px}
+.hero{text-align:center;padding:20px 12px 16px;position:relative}
+.flower{font-size:30px;letter-spacing:7px;color:#e2a0b8}
+.kicker{font-size:12px;letter-spacing:.18em;color:var(--rose);margin:8px 0}
+h1{font-size:clamp(24px,6vw,32px);line-height:1.45;margin:7px 0 8px;color:#765665}
+.sub{font-size:14px;line-height:1.8;color:var(--muted);margin:0 auto;max-width:360px}
+.card{background:rgba(255,255,255,.88);border:1px solid #f2dce5;border-radius:25px;padding:22px 18px;box-shadow:0 10px 28px rgba(151,105,126,.09)}
+.progress{height:7px;border-radius:20px;background:#f4e8ed;overflow:hidden;margin:2px 0 20px}
+.bar{height:100%;width:0;background:linear-gradient(90deg,#e9adc3,#c9b9e9);border-radius:20px;transition:width .25s}
+.step{font-size:12px;color:var(--rose);letter-spacing:.1em;margin:0 0 9px}
+.question{font-size:20px;line-height:1.55;margin:0 0 17px;color:#6e5361}
+.choices{display:grid;gap:10px}
+.choice{width:100%;border:1px solid #efd8e2;background:#fffafd;color:#68545e;border-radius:16px;padding:15px 14px;text-align:left;font-size:15px;line-height:1.55;cursor:pointer;transition:.18s}
+.choice:active{transform:scale(.99)}.choice:hover,.choice:focus{outline:none;border-color:#d99ab3;background:#fff2f6}
+.choice span{display:inline-grid;place-items:center;width:27px;height:27px;border-radius:50%;background:#f8e4ec;color:#b66d8b;font-size:13px;margin-right:9px}
+.actions{display:flex;gap:10px;margin-top:18px}.btn{border:0;border-radius:999px;padding:13px 18px;font-size:14px;cursor:pointer}
+.back{background:#f4edf1;color:#806c77}.restart{background:#d88fac;color:white;flex:1}
+.result{text-align:center}.result-label{display:inline-block;background:#f8e6ed;color:#ad6f89;padding:7px 15px;border-radius:99px;font-size:12px;letter-spacing:.08em}
+.result h2{font-size:25px;color:#805b6c;line-height:1.45;margin:13px 0 8px}
+.lead{font-size:14px;line-height:1.9;color:#776873;margin:0 0 17px}
+.art{background:#fff8ee;border-radius:18px;padding:9px;border:1px solid #f1e3d7;margin:16px 0}
+.art img{display:block;width:100%;height:auto;border-radius:12px}
+.quote{font-size:19px;font-weight:700;color:#875d70;margin:13px 0 4px}
+.section{background:#fff8fb;border-radius:17px;padding:15px;text-align:left;margin-top:12px}
+.section h3{font-size:14px;color:#b16f8b;margin:0 0 7px}
+.section p{font-size:14px;line-height:1.85;margin:0;color:#6f6269}
+.small{font-size:11px;color:#a18f98;line-height:1.7;margin:14px 4px 0}
+.gallery{margin-top:18px}.gallery h2{font-size:22px;color:#805b6c;text-align:center;margin:4px 0 8px}.gallery-intro{text-align:center;font-size:13px;color:var(--muted);line-height:1.8;margin:0 0 16px}.gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.gallery-item{margin:0;background:#fff8ee;border:1px solid #f1e3d7;border-radius:15px;padding:7px;overflow:hidden}.gallery-item img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px}.gallery-item figcaption{text-align:center;font-size:12px;line-height:1.5;color:#875d70;padding:7px 2px 3px}.trial{text-align:center;margin-top:18px;background:#fff8fb;border:1px solid #f2dce5;border-radius:20px;padding:20px 16px}.trial h2{font-size:20px;color:#805b6c;margin:0 0 8px}.trial p{font-size:13px;line-height:1.8;color:var(--muted);margin:0 0 14px}.trial-btn{display:inline-block;border:0;border-radius:999px;background:#d88fac;color:#fff;text-decoration:none;padding:13px 22px;font-size:14px;cursor:pointer}.footer{text-align:center;font-size:12px;color:#b18a9a;margin:22px 0 0}.footer b{color:#b96e8c}
+.hidden{display:none!important}
+@media(min-width:500px){main{padding-top:34px}.card{padding:28px 26px}}
+</style>
+</head>
+<body>
+<main>
+<header class="hero">
+  <div class="flower">✿　🌼　✿</div>
+  <p class="kicker">ANNIS SMILE WORDS</p>
+  <h1>心がふっと軽くなる<br>言葉診断</h1>
+  <p class="sub">今のあなたの気持ちに寄り添う<br>あにすからの言葉を見つけてみませんか？</p>
+</header>
+<section class="card" id="quiz">
+  <div class="progress"><div class="bar" id="bar"></div></div>
+  <p class="step" id="step">QUESTION 1 / 3</p>
+  <h2 class="question" id="question"></h2>
+  <div class="choices" id="choices"></div>
+  <div class="actions"><button class="btn back hidden" id="back">ひとつ戻る</button></div>
+</section>
+<section class="card result hidden" id="result">
+  <div class="flower">🌼</div>
+  <span class="result-label">YOUR MESSAGE</span>
+  <h2 id="resultTitle"></h2>
+  <p class="lead" id="resultLead"></p>
+  <div class="art"><img id="artImage" alt="あにすの筆文字作品"><div class="quote" id="artQuote"></div></div>
+  <div class="section"><h3>♡ あにすからのメッセージ</h3><p id="message"></p></div>
+  <div class="section"><h3>🌱 今日の小さなアドバイス</h3><p id="advice"></p></div>
+  <p class="small">この言葉が、あなたの心にそっと寄り添えますように。<br>今のあなたに必要な言葉として、受け取ってね。</p>
+  <div class="actions"><button class="btn restart" id="again">もう一度診断する</button></div>
+</section>
+<section class="card gallery hidden" id="gallery">
+  <div class="flower" style="text-align:center">🌼　✿　🌼</div>
+  <h2>あにすの筆文字ギャラリー</h2>
+  <p class="gallery-intro">ほかの言葉たちものぞいてみてね。<br>今のあなたにぴったりの一枚が見つかりますように♡</p>
+  <div class="gallery-grid" id="galleryGrid"></div>
+</section>
+<section class="trial hidden" id="trial">
+  <h2>筆文字を、あなたも体験してみませんか？</h2>
+  <p>筆を持って、心がふっとゆるむ時間を一緒に楽しみましょう♡</p>
+  <button class="trial-btn" id="trialButton" type="button">無料体験レッスンはこちら</button>
+</section>
+<footer class="footer">written with <b>♡</b> by あにす ☺︎</footer>
+</main>
+<script>
+// ▼無料体験レッスンのURLは、あとからこの "" の中に貼り付けてください。
+// 例：const TRIAL_LESSON_URL = "https://example.com/";
+const TRIAL_LESSON_URL = "";
+
+const galleryWorks = [
+ ["0588","焦らなくていい"],["0589","今日は休む日"],["0590","大丈夫、ちゃんと進んでる"],
+ ["0591","今の私も好き"],["0592","比べなくていい"],["0593","無理しなくていいよ"],
+ ["0594","泣いたっていい"],["0595","ゆっくりで大丈夫"],["0596","全部うまくいかなくてもいい"],
+ ["0597","あなたには価値がある"],["0598","できたことを見つけよう"],["0599","笑える日がまた来る"],
+ ["0600","今日もよく頑張った"],["0601","ひとりじゃない"],["0602","あなたらしく"],
+ ["0603","そのままで大丈夫"],["0604","ありがとう私"],["0605","なんとかなる"],
+ ["0606","幸せはすぐそば"],["0607","心の声を大切に"],["0608","深呼吸"],
+ ["0609","今を味わおう"],["0610","笑顔は後からついてくる"],["0611","明日は明日の風がふく"],
+ ["0612","あなたも大切な人"]
+];
+const galleryGrid = document.getElementById("galleryGrid");
+galleryWorks.forEach(([id, phrase]) => {
+ const figure = document.createElement("figure"); figure.className = "gallery-item";
+ const img = document.createElement("img"); img.src = "images/" + id + ".jpg"; img.alt = "あにすの筆文字「" + phrase + "」"; img.loading = "lazy";
+ const caption = document.createElement("figcaption"); caption.textContent = "「" + phrase + "」";
+ figure.append(img, caption); galleryGrid.appendChild(figure);
+});
+document.getElementById("trialButton").addEventListener("click", () => {
+ if (!TRIAL_LESSON_URL.trim()) {
+  alert("無料体験レッスンのURLがまだ設定されていません。index.html内の TRIAL_LESSON_URL にURLを入力してください。");
+  return;
+ }
+ window.open(TRIAL_LESSON_URL, "_blank", "noopener,noreferrer");
+});
+
+const questions = [
+ {q:"今のあなたの心に一番近いのは？",a:[
+  ["ちょっと疲れている。ひと息つきたい","rest"],
+  ["自分に自信が持てない。誰かに認めてほしい","self"],
+  ["不安はあるけど、前に進みたい","step"],
+  ["毎日の中にある幸せを感じたい","happy"]]},
+ {q:"もし今、ひとつだけ欲しいものがあるなら？",a:[
+  ["何もしなくていい、安心できる時間","rest"],
+  ["「そのままで大丈夫」と思える気持ち","self"],
+  ["一歩踏み出す勇気や希望","step"],
+  ["笑顔になれる小さなきっかけ","happy"]]},
+ {q:"今日の自分にかけてあげたい言葉は？",a:[
+  ["無理しなくていいよ","rest"],
+  ["私には私の良さがある","self"],
+  ["きっとなんとかなる","step"],
+  ["今ある幸せを大切にしよう","happy"]]}
+];
+const types = {
+ rest:{title:"心を休ませたいあなたへ",lead:"いつも頑張っている心に、ひと休みの時間を。",pool:[["0588","焦らなくていい"],["0589","今日は休む日"],["0593","無理しなくていいよ"],["0594","泣いたっていい"],["0595","ゆっくりで大丈夫"],["0601","ひとりじゃない"],["0608","深呼吸"]],message:"頑張ることが当たり前になっていないかな。立ち止まることも、自分を大切にする大事な一歩。休んだって大丈夫。あなたは十分よくやっているよ。",advice:"温かい飲み物を用意して、深呼吸を3回。今日は「やらなきゃ」をひとつお休みしてみよう。"},
+ self:{title:"自分を認めてあげたいあなたへ",lead:"誰かと比べなくていい。あなたには、あなたの素敵なところがあるよ。",pool:[["0591","今の私も好き"],["0592","比べなくていい"],["0597","あなたには価値がある"],["0598","できたことを見つけよう"],["0600","今日もよく頑張った"],["0602","あなたらしく"],["0603","そのままで大丈夫"],["0604","ありがとう私"]],message:"誰かのようにならなくても大丈夫。あなたが歩いてきた道も、頑張ってきたことも、ちゃんとあなたの宝物。まずは自分自身に優しい言葉をかけてあげてね。",advice:"今日できたことを、小さなことでも3つ書き出してみよう。最後に「私、よくやってる！」と声に出してみて。"},
+ step:{title:"一歩踏み出したいあなたへ",lead:"迷いながらでも大丈夫。あなたのペースで進んでいこう。",pool:[["0590","大丈夫、ちゃんと進んでる"],["0596","全部うまくいかなくてもいい"],["0599","笑える日がまた来る"],["0605","なんとかなる"],["0611","明日は明日の風がふく"]],message:"先が見えないと不安になるよね。でも、完璧じゃなくていいし、遠回りしたっていい。小さな一歩も、ちゃんと前進。あなたのタイミングで進んでいこう。",advice:"今気になっていることを、5分だけやってみよう。大きく変えようとしなくていい。小さな一歩で十分だよ。"},
+ happy:{title:"幸せを感じたいあなたへ",lead:"幸せは、遠くではなく、いつもの毎日の中にもあるのかも。",pool:[["0606","幸せはすぐそば"],["0607","心の声を大切に"],["0609","今を味わおう"],["0610","笑顔は後からついてくる"],["0612","あなたも大切な人"]],message:"忙しい毎日の中では、幸せが見えにくくなることもあるよね。大きな出来事じゃなくても、ほっとする瞬間や心が動くことを大切に。あなた自身も、誰かにとっても大切な存在だよ。",advice:"今日「ちょっと嬉しかったこと」をひとつ見つけてみよう。好きな花を見る、空を見上げる。それだけでも素敵な時間だよ。"}
+};
+let answers=[];
+const $=id=>document.getElementById(id);
+function render(){
+ const i=answers.length;
+ $("bar").style.width=(i/3*100)+"%";
+ $("step").textContent=`QUESTION ${i+1} / 3`;
+ $("question").textContent=questions[i].q;
+ $("choices").innerHTML="";
+ questions[i].a.forEach(([label,type],n)=>{
+  const b=document.createElement("button"); b.className="choice";
+  b.innerHTML=`<span>${["A","B","C","D"][n]}</span>${label}`;
+  b.onclick=()=>{answers.push(type); if(answers.length===3)showResult(); else render();};
+  $("choices").appendChild(b);
+ });
+ $("back").classList.toggle("hidden",i===0);
+ $("back").onclick=()=>{answers.pop();render();};
+}
+function showResult(){
+ const scores={rest:0,self:0,step:0,happy:0}; answers.forEach(x=>scores[x]++);
+ const max=Math.max(...Object.values(scores));
+ const winners=Object.keys(scores).filter(k=>scores[k]===max);
+ // Tie-break with the most recent answer among the tied types.
+ const type=[...answers].reverse().find(x=>winners.includes(x)) || winners[0];
+ const data=types[type];
+ const chosen=data.pool[Math.floor(Math.random()*data.pool.length)];
+ $("quiz").classList.add("hidden"); $("result").classList.remove("hidden");
+ $("gallery").classList.remove("hidden"); $("trial").classList.remove("hidden");
+ $("resultTitle").textContent=data.title; $("resultLead").textContent=data.lead;
+ $("artImage").src="images/"+chosen[0]+".jpg"; $("artImage").alt="あにすの筆文字「"+chosen[1]+"」";
+ $("artQuote").textContent="「"+chosen[1]+"」";
+ $("message").textContent=data.message; $("advice").textContent=data.advice;
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+$("again").onclick=()=>{answers=[];$("result").classList.add("hidden");$("gallery").classList.add("hidden");$("trial").classList.add("hidden");$("quiz").classList.remove("hidden");render();window.scrollTo({top:0,behavior:"smooth"});};
+render();
+</script>
+</body></html>
